@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProgNutri index
+{% endblock %}
+
+{% block body %}
+	<h1>ProgNutri index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>nom</th>
+				<th>Date</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for prog_nutri in prog_nutris %}
+				<tr>
+					<td>{{ prog_nutri.id }}</td>
+					<td>{{ prog_nutri.nom }}</td>
+					<td>{{ prog_nutri.date ? prog_nutri.date|date('Y-m-d') : '' }}</td>
+					<td>
+						<a href="{{ path('prog_nutri_show', {'id': prog_nutri.id}) }}">show</a>
+						<a href="{{ path('prog_nutri_edit', {'id': prog_nutri.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('prog_nutri_new') }}">Create new</a>
+{% endblock %}

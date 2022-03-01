@@ -1,0 +1,75 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Repas
+{% endblock %}
+
+{% block hero%}{% endblock %}
+
+{% block about %}{% endblock %}
+
+{% block prog %}{% endblock %}
+
+{% block coach %}{% endblock %}
+
+{% block contact %}{% endblock %}
+{% block body %}
+
+	<section class="class section" id="class">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-12 col-12 text-center">
+					<h1>Repas</h1>
+
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Id</th>
+								<td>{{ repa.id }}</td>
+							</tr>
+							<tr>
+								<th>Nom</th>
+								<td>{{ repa.nom }}</td>
+							</tr>
+							<tr>
+								<th>Description</th>
+								<td>{{ repa.description }}</td>
+							</tr>
+							<tr>
+								<th>Ingrediant1</th>
+								<td>{{ repa.ingrediant1 }}</td>
+							</tr>
+							<tr>
+								<th>NbCaloris</th>
+								<td>{{ repa.nbCaloris }}</td>
+							</tr>
+							<tr>
+								<th>Glucides</th>
+								<td>{{ repa.glucides }}</td>
+							</tr>
+							<tr>
+								<th>Legumes</th>
+								<td>{{ repa.legumes }}</td>
+							</tr>
+							<tr>
+								<th>QuantProt</th>
+								<td>{{ repa.quantProt }}</td>
+							</tr>
+							<tr>
+								<th>QuantLegu</th>
+								<td>{{ repa.quantLegu }}</td>
+							</tr>
+							<tr>
+								<th>QuantGluc</th>
+								<td>{{ repa.quantGluc }}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<a href="{{ path('repas_index') }}">back to list</a>
+
+					<a href="{{ path('repas_edit', {'id': repa.id}) }}">edit</a>
+
+					{{ include('repas/_delete_form.html.twig') }}
+				{% endblock %}

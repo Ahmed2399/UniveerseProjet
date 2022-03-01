@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ProgMuscul
+{% endblock %}
+
+{% block body %}
+	<h1>Edit ProgMuscul</h1>
+
+	{{ include('prog_muscul/_form.html.twig', {'button_label': 'Update'}) }}
+
+	<a href="{{ path('prog_muscul_index') }}">back to list</a>
+
+	{{ include('prog_muscul/_delete_form.html.twig') }}
+{% endblock %}

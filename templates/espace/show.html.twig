@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace
+{% endblock %}
+
+{% block body %}
+	<section class="about section" id="about">
+		<div class="container">
+			<div class="row">
+
+				<div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
+					<h1>Espace</h1>
+
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Id</th>
+								<td>{{ espace.id }}</td>
+							</tr>
+							<tr>
+								<th>Date</th>
+								<td>{{ espace.date ? espace.date|date('Y-m-d') : '' }}</td>
+							</tr>
+							<tr>
+								<th>Status</th>
+								<td>{{ espace.status ? 'Yes' : 'No' }}</td>
+							</tr>
+							<tr>
+								<th>Duree</th>
+								<td>{{ espace.duree }}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<a href="{{ path('espace_index') }}">back to list</a>
+
+					<a href="{{ path('espace_edit', {'id': espace.id}) }}">edit</a>
+
+					{{ include('espace/_delete_form.html.twig') }}
+				</div>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}

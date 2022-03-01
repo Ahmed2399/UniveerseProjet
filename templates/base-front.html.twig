@@ -7,7 +7,7 @@
 
 			</title>
 		{% endblock %}
-
+		{% block sty %}{% endblock %}
 
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -16,18 +16,18 @@
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<link rel="stylesheet" href="front-office/css/bootstrap.min.css">
-		<link rel="stylesheet" href="front-office/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../front-office/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../front-office/css/font-awesome.min.css">
 		<link
-		rel="stylesheet" href="front-office/css/aos.css">
+		rel="stylesheet" href="../../front-office/css/aos.css">
 
 		<!-- MAIN CSS -->
 		<link
-		rel="stylesheet" href="front-office/css/tooplate-gymso-style.css">
+		rel="stylesheet" href="../../front-office/css/tooplate-gymso-style.css">
 	<!--
-																																																																																																																																																																																															Tooplate 2119 Gymso Fitness
-																																																																																																																																																																																															https://www.tooplate.com/view/2119-gymso-fitness
-																																																																																																																																																																																															-->
+																																																																																																																																																																																																																						Tooplate 2119 Gymso Fitness
+																																																																																																																																																																																																																						https://www.tooplate.com/view/2119-gymso-fitness
+																																																																																																																																																																																																																						-->
 	</head>
 	<body
 		data-spy="scroll" data-target="#navbarNav" data-offset="50">
@@ -44,27 +44,48 @@
 
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ml-lg-auto">
-						<li class="nav-item">
 
-							<a href="{{ path('acceuil') }}" class="nav-link smoothScroll">Acceuil</a>
-						</li>
+						{% if app.user %}
+
+							<li class="nav-item">
+
+								<a href="{{ path('acceuil') }}" class="nav-link smoothScroll">Acceuil</a>
+							</li>
 
 
-						<li class="nav-item">
-							<a href="{{ path('coach') }}" class="nav-link smoothScroll">Coachs</a>
-						</li>
+							<li class="nav-item">
+								<a href="{{ path('coach') }}" class="nav-link smoothScroll">Coachs</a>
+							</li>
 
-						<li class="nav-item">
-							<a href="{{ path('prog_mus') }}" class="nav-link smoothScroll">Programmes</a>
-						</li>
+							<li class="nav-item">
+								<a href="{{ path('prog_mus') }}" class="nav-link smoothScroll">Programmes</a>
+							</li>
 
-						<li class="nav-item">
-							<a href="{{ path('event') }}" class="nav-link smoothScroll">événements</a>
-						</li>
+							<li class="nav-item">
+								<a href="{{ path('event') }}" class="nav-link smoothScroll">événements</a>
+							</li>
 
-						<li class="nav-item">
-							<a href="{{ path('blog') }}" class="nav-link smoothScroll">Blog</a>
-						</li>
+							<li class="nav-item">
+								<a href="{{ path('blog') }}" class="nav-link smoothScroll">Blog</a>
+							</li>
+
+
+							<li class="nav-item">
+								<a href="{{ path('app_logout') }}" class="nav-link smoothScroll">Déconnexion</a>
+							</li>
+
+						{% else %}
+
+							<li class="nav-item">
+								<a href="{{ path('choix') }}" class="nav-link smoothScroll">S'inscrire</a>
+							</li>
+
+
+							<li class="nav-item">
+								<a href="{{ path('app_login') }}" class="nav-link smoothScroll">S'authentifier</a>
+							</li>
+						{% endif %}
+
 					</ul>
 
 
@@ -358,6 +379,9 @@
 			</section>
 		{% endblock %}
 
+
+		{% block body %}{% endblock %}
+
 		{% block prog %}
 			<!-- SCHEDULE -->
 			<section class="schedule section" id="schedule">
@@ -503,11 +527,11 @@
 
 
 							<!-- How to change your own map point
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															1. Go to Google Maps
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															2. Click on your location point
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															3. Click "Share" and choose "Embed map" tab
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															4. Copy only URL and paste it within the src="" field below
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														-->
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																1. Go to Google Maps
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																2. Click on your location point
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																3. Click "Share" and choose "Embed map" tab
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																4. Copy only URL and paste it within the src="" field below
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															-->
 							<div class="google-map" data-aos="fade-up" data-aos-delay="900">
 								<iframe src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="1920" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 							</div>
@@ -580,15 +604,41 @@
 				</div>
 			</div>
 		{% endblock %}
-
-
+		{% block jss %}{% endblock %}
 		<!-- SCRIPTS -->
 		{% block js %}
-			<script src="front-office/js/jquery.min.js"></script>
-			<script src="front-office/js/bootstrap.min.js"></script>
-			<script src="front-office/js/aos.js"></script>
-			<script src="front-office/js/smoothscroll.js"></script>
-			<script src="front-office/js/custom.js"></script>
+			<script src="../../front-office/js/jquery.min.js"></script>
+			<script src="../../front-office/js/bootstrap.min.js"></script>
+			<script src="../../front-office/js/aos.js"></script>
+			<script src="../../front-office/js/smoothscroll.js"></script>
+			<script src="../../front-office/js/custom.js"></script>
+			<script>
+				$(function () {
+$("#example1").DataTable({
+"responsive": true,
+"lengthChange": false,
+"autoWidth": false,
+"buttons": [
+"copy",
+"csv",
+"excel",
+"pdf",
+"print",
+"colvis"
+]
+}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+$('#example2').DataTable({
+"paging": true,
+"lengthChange": false,
+"searching": false,
+"ordering": true,
+"info": true,
+"autoWidth": false,
+"responsive": true
+});
+});
+			</script>
+
 		</body>
 	</html>
 {% endblock %}

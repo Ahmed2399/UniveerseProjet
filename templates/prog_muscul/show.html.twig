@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProgMuscul{% endblock %}
+
+{% block body %}
+    <h1>ProgMuscul</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ prog_muscul.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ prog_muscul.date ? prog_muscul.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ prog_muscul.nom }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ prog_muscul.time ? prog_muscul.time|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('prog_muscul_index') }}">back to list</a>
+
+    <a href="{{ path('prog_muscul_edit', {'id': prog_muscul.id}) }}">edit</a>
+
+    {{ include('prog_muscul/_delete_form.html.twig') }}
+{% endblock %}

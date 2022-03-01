@@ -1,0 +1,39 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Exc
+{% endblock %}
+
+{% block body %}
+	<h1>Exc</h1>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ exc.id }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ exc.nom }}</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td>{{ exc.description }}</td>
+			</tr>
+			<tr>
+				<th>Images</th>
+				<td>{{ exc.images }}</td>
+			</tr>
+			<tr>
+				<th>Video</th>
+				<td>{{ exc.video }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('exc_index') }}">back to list</a>
+
+	<a href="{{ path('exc_edit', {'id': exc.id}) }}">edit</a>
+
+	{{ include('exc/_delete_form.html.twig') }}
+{% endblock %}

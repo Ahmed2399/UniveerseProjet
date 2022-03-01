@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col s12 m-t-30">
+			<h5>Utilisateurs</h5>
+			<table style="background-color:#FFFDFD;">
+				<tr>
+					<th>id</th>
+					<th>Username</th>
+					<th>Roles</th>
+					<th>Adresse email</th>
+
+
+					<th>Actions</th>
+				</tr>
+				{% set i = 1 %}
+				{% for user in users %}
+					<tr>
+						<td>{{ user.id }}</td>
+						<td>{{ user.username }}</td>
+
+
+						<td>
+							<span class="badge blue">
+								admin
+							</span>
+						</td>
+						<td>{{ user.email }}</td>
+
+						<td>
+							<a href="">
+								<i class="material-icons red-text">delete</i>
+							</a>
+						</td>
+					</tr>
+					{% set i = i+1 %}
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+
+{% endblock %}

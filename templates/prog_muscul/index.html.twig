@@ -1,0 +1,254 @@
+{% extends 'base-front.html.twig' %}
+
+{% block title %}MyCoach
+{% endblock %}
+{% block sty %}
+	<!-- Google Font: Source Sans Pro -->
+	<link
+	rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- Font Awesome -->
+	<link
+	rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+{% endblock %}
+{% block hero%}{% endblock %}
+
+{% block about %}{% endblock %}
+
+{% block coach %}{% endblock %}
+
+{% block prog %}{% endblock %}
+{% block contact %}{% endblock %}
+{% block body %}
+	<!-- SCHEDULE -->
+	<section class="schedule section" id="schedule">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-12 col-12 text-center">
+
+
+					<h2 class="text-white" data-aos="fade-up" data-aos-delay="200">Programme Musculation</h2>
+				</div>
+
+				<div class="col-lg-12 py-5 col-md-12 col-12">
+					<table class="table table-bordered table-responsive schedule-table" data-aos="fade-up" data-aos-delay="300">
+
+						<thead class="thead-light">
+							<th>
+								<i class="fa fa-calendar"></i>
+							</th>
+							<th>Mon</th>
+							<th>Tue</th>
+							<th>Wed</th>
+							<th>Thu</th>
+							<th>Fri</th>
+							<th>Sat</th>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>
+									<small>7:00 am</small>
+								</td>
+								<td>
+									<strong>Cardio</strong>
+									<span>7:00 am - 9:00 am</span>
+								</td>
+								<td>
+									<strong>Biceeps</strong>
+									<span>7:00 am - 9:00 am</span>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td>
+									<small>9:00 am</small>
+
+								</td>
+								<td>
+									<a href="/prog/muscul/new">
+										<strong>+</strong>
+									</a>
+
+								</td>
+								<td></td>
+								<td>
+									<strong>Jambes</strong>
+									<span>8:00 am - 9:00 am</span>
+								</td>
+								<td>
+									<strong>Abdominaux</strong>
+									<span>8:00 am - 9:00 am</span>
+								</td>
+								<td></td>
+								<td>
+									<strong>Cardio</strong>
+									<span>8:00 am - 9:00 am</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<small>11:00 am</small>
+								</td>
+								<td></td>
+								<td>
+									<strong>Boxing</strong>
+									<span>11:00 am - 2:00 pm</span>
+								</td>
+								<td></td>
+								<td></td>
+								<td>
+									<strong>Body work</strong>
+									<span>11:50 am - 5:20 pm</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<small>2:00 pm</small>
+								</td>
+								<td>
+									<strong>Boxing</strong>
+									<span>2:00 pm - 4:00 pm</span>
+								</td>
+								<td>
+									<strong>Power lifting</strong>
+									<span>3:00 pm - 6:00 pm</span>
+								</td>
+								<td></td>
+								<td>
+									<strong>Cardio</strong>
+									<span>6:00 pm - 9:00 pm</span>
+								</td>
+								<td></td>
+								<td>
+									<strong>Crossfit</strong>
+									<span>5:00 pm - 7:00 pm</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section
+		class="content">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Projects</h3>
+
+				<div class="card-tools">
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+						<i class="fas fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-striped projects">
+					<thead>
+						<tr>
+							<th style="width: 1%">
+								#
+							</th>
+							<th style="width: 20%">
+								Nom de programme
+							</th>
+							<th style="width: 30%">
+								Sportif
+							</th>
+							<th>
+								Repitition
+							</th>
+							<th style="width: 8%" class="text-center">
+								Status
+							</th>
+							<th style="width: 20%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for prog_muscul in prog_musculs %}
+							<tr>
+								<td>
+									#
+								</td>
+								<td>
+									<a>
+										AdminLTE v3
+									</a>
+									<br/>
+									<small>
+										Created 01.01.2019
+									</small>
+								</td>
+								<td>
+									<ul class="list-inline">
+										<li class="list-inline-item">
+											<img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+										</li>
+										<li class="list-inline-item">
+											<img alt="Avatar" class="table-avatar" src="../../dist/img/avatar2.png">
+										</li>
+										<li class="list-inline-item">
+											<img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+										</li>
+										<li class="list-inline-item">
+											<img alt="Avatar" class="table-avatar" src="../../dist/img/avatar4.png">
+										</li>
+									</ul>
+								</td>
+								<td class="project_progress">
+									<div class="progress progress-sm">
+										<div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%"></div>
+									</div>
+									<small>
+										57% Complete
+									</small>
+								</td>
+								<td class="project-state">
+									<span class="badge badge-success">Success</span>
+								</td>
+								<td class="project-actions text-right">
+									<a class="btn btn-primary btn-sm" href="#">
+										<i class="fas fa-folder"></i>
+										View
+									</a>
+									<a class="btn btn-info btn-sm" href="#">
+										<i class="fas fa-pencil-alt"></i>
+										Edit
+									</a>
+									<a class="btn btn-danger btn-sm" href="#">
+										<i class="fas fa-trash"></i>
+										Delete
+									</a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								Pas de programme
+							</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+			</div>
+			<!-- /.card-body -->
+		</div>
+		<!-- /.card -->
+
+	</section>
+</div>
+<!-- /.card --></div><!-- /.col --></div>{% endblock %}{% block jss %}<!-- jQuery --><script src="../../plugins/jquery/jquery.min.js"></script><!-- Bootstrap 4 --><script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- AdminLTE App --><script src="../../dist/js/adminlte.min.js"></script><!-- AdminLTE for demo purposes --><script src="../../dist/js/demo.js"></script>{% endblock %}

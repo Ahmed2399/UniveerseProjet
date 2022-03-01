@@ -27,6 +27,7 @@ class Repas
      */
     private $description;
 
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -42,6 +43,31 @@ class Repas
      * @ORM\JoinColumn(nullable=false)
      */
     private $progNutr;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $glucides;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $legumes;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantProt;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantLegu;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantGluc;
 
     public function getId(): ?int
     {
@@ -104,6 +130,66 @@ class Repas
     public function setProgNutr(?ProgNutri $progNutr): self
     {
         $this->progNutr = $progNutr;
+
+        return $this;
+    }
+
+    public function getGlucides(): ?string
+    {
+        return $this->glucides;
+    }
+
+    public function setGlucides(string $glucides): self
+    {
+        $this->glucides = $glucides;
+
+        return $this;
+    }
+
+    public function getLegumes(): ?string
+    {
+        return $this->legumes;
+    }
+
+    public function setLegumes(string $legumes): self
+    {
+        $this->legumes = $legumes;
+
+        return $this;
+    }
+
+    public function getQuantProt(): ?int
+    {
+        return $this->quantProt;
+    }
+
+    public function setQuantProt(int $quantProt): self
+    {
+        $this->quantProt = $quantProt;
+
+        return $this;
+    }
+
+    public function getQuantLegu(): ?int
+    {
+        return $this->quantLegu;
+    }
+
+    public function setQuantLegu(int $quantLegu): self
+    {
+        $this->quantLegu = $quantLegu;
+
+        return $this;
+    }
+
+    public function getQuantGluc(): ?int
+    {
+        return $this->quantGluc;
+    }
+
+    public function setQuantGluc(int $quantGluc): self
+    {
+        $this->quantGluc = $quantGluc;
 
         return $this;
     }

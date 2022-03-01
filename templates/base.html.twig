@@ -16,18 +16,18 @@
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<link rel="stylesheet" href="front-office/css/bootstrap.min.css">
-		<link rel="stylesheet" href="front-office/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../front-office/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../front-office/css/font-awesome.min.css">
 		<link
-		rel="stylesheet" href="front-office/css/aos.css">
+		rel="stylesheet" href="../../front-office/css/aos.css">
 
 		<!-- MAIN CSS -->
 		<link
-		rel="stylesheet" href="front-office/css/tooplate-gymso-style.css">
+		rel="stylesheet" href="../../front-office/css/tooplate-gymso-style.css">
 	<!--
-																																																																																																																																																																	Tooplate 2119 Gymso Fitness
-																																																																																																																																																																	https://www.tooplate.com/view/2119-gymso-fitness
-																																																																																																																																																																	-->
+																																																																																																																																																																																			Tooplate 2119 Gymso Fitness
+																																																																																																																																																																																			https://www.tooplate.com/view/2119-gymso-fitness
+																																																																																																																																																																																			-->
 	</head>
 	<body
 		data-spy="scroll" data-target="#navbarNav" data-offset="50">
@@ -35,51 +35,48 @@
 		<!-- MENU BAR -->
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container">
-
-				<center>
-					<a class="navbar-brand" href="{{ path('acceuil') }}">MyCoach</a>
-				</center>
-
+				<a class="navbar-brand" href="{{ path('acceuil') }}">MyCoach</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-			</div>
-		</nav>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ml-lg-auto">
+						{% if app.user %}
+							<li class="nav-item">
+								<a href="{{ path('acceuil') }}" class="nav-link smoothScroll">Acceuil</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ path('coach') }}" class="nav-link smoothScroll">Coachs</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ path('prog_mus') }}" class="nav-link smoothScroll">Programmes</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ path('event') }}" class="nav-link smoothScroll">événements</a>
+							</li>
 
+							<li class="nav-item">
+								<a href="{{ path('blog') }}" class="nav-link smoothScroll">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ path('app_logout') }}" class="nav-link smoothScroll">Déconnexion</a>
+							</li>
 
-		<!-- HERO -->
-		<section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+						{% else %}
 
-			<div class="bg-overlay"></div>
+							<li class="nav-item">
+								<a href="{{ path('choix') }}" class="nav-link smoothScroll">S'inscrire</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ path('app_login') }}" class="nav-link smoothScroll">S'authentifier</a>
+							</li>
+						{% endif %}
 
-			<div class="container">
-				<div class="row">
-
-					<div class="col-lg-8 col-md-10 mx-auto col-12">
-						<div class="hero-text mt-5 text-center">
-
-
-							{% block body %}
-								<h6 data-aos="fade-up" data-aos-delay="300">MyCoach, votre bon guide sportif afin d’achever le résultat voulu!</h6>
-
-								<h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Plateforme de Coaching Professionnel
-								</h1>
-
-								<a href="{{ path('app_register') }}" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">S'inscrire</a>
-
-								<a href="{{ path('app_login') }}" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">S'authentifier</a>
-
-							{% endblock %}
-
-						</div>
-					</div>
-
+					</ul>
 				</div>
 			</div>
-
-
-		</section>
-
+		</nav>
+		{% block body %}{% endblock %}
 
 		<!-- FOOTER -->
 		<footer class="site-footer">
@@ -103,50 +100,14 @@
 
 				</div>
 			</div>
-		</footer><!-- Modal --><div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-
-				<div class="modal-content">
-					<div class="modal-header">
-
-						<h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
-
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-
-					<div class="modal-body">
-						<form class="membership-form webform" role="form">
-							<input type="text" class="form-control" name="cf-name" placeholder="John Doe">
-
-							<input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
-
-							<input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-
-							<textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
-
-							<button type="submit" class="form-control" id="submit-button" name="submit">Submit Button</button>
-
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="signup-agree">
-								<label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the
-									<a href="#">Terms &amp;Conditions</a>
-								</label>
-							</div>
-						</form>
-					</div>
-
-					<div class="modal-footer"></div>
-
-				</div>
-			</div>
-		</div><!-- SCRIPTS -->{% block js %}
-			<script src="front-office/js/jquery.min.js"></script>
-			<script src="front-office/js/bootstrap.min.js"></script>
-			<script src="front-office/js/aos.js"></script>
-			<script src="front-office/js/smoothscroll.js"></script>
-			<script src="front-office/js/custom.js"></script>
+		</footer>
+		<!-- SCRIPTS -->
+		{% block js %}
+			<script src="../../front-office/js/jquery.min.js"></script>
+			<script src="../../front-office/js/bootstrap.min.js"></script>
+			<script src="../../front-office/js/aos.js"></script>
+			<script src="../../front-office/js/smoothscroll.js"></script>
+			<script src="../../front-office/js/custom.js"></script>
 		</body>
 	</html>
 </body></html>{% endblock %}
