@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\RepasRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=RepasRepository::class)
@@ -19,6 +20,7 @@ class Repas
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Nom is required")
      */
     private $nom;
 

@@ -6,6 +6,8 @@ use App\Repository\ProgMusculRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProgMusculRepository::class)
@@ -32,6 +34,7 @@ class ProgMuscul
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Nom is required")
      */
     private $nom;
 

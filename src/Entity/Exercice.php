@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ExerciceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ExerciceRepository::class)
@@ -19,6 +21,7 @@ class Exercice
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Nom is required")
      */
     private $nom;
 
